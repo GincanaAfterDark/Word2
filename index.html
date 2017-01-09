@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Gincana TAD</title>
+		  <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/wordsearch.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+
+    <div class="wrap">
+	
+      <h1 align="center" class="logo">Gincana TAD</h1>
+	    <h2 align="center" class="logo">Caça Palavras</h2>
+		
+		 <p align="middle" class="logo">*Ao encontrar as palavras, comece marcando-as pela inicial, para que sejam devidamente riscadas na tabela ao lado.</p>
+      <section id="ws-area"></section>
+    		  <ul class="ws-words"></ul>
+  
+    </div>
+  
+	
+    <script src="js/utility.min.js"></script>
+    <script src="js/wordsearch.min.js"></script>
+    <script type="text/javascript">
+	
+      var gameAreaEl = document.getElementById('ws-area');
+      var gameobj = gameAreaEl.wordSearch();
+
+      // Put words into `.ws-words`
+	  	// <img src="images/logo.png"></img>
+      var words = gameobj.settings.wordsList,
+        wordsWrap = document.querySelector('.ws-words');
+      for (i in words) {
+        var liEl = document.createElement('li');
+        liEl.setAttribute('class', 'ws-word');
+        liEl.innerText = words[i];
+        wordsWrap.appendChild(liEl);
+      }
+	  
+	  
+	  
+    </script>
+  </body>
+</html>
